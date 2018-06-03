@@ -1,7 +1,28 @@
-<h1> Chat rooms</h1>
-<p class="lead">
-  <%= link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary' %>
-</p>
-<ul>
-  <%= render @chat_rooms %>
-</ul>   
+<h1>Room list</h1>
+<body>
+  <p class="lead">
+    <%= link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary' %>
+  </p>
+  <div class='col-xs-9'>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>name<th>
+          <th>subscription<th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @chat_rooms.each do |chat_room| %>
+          <tr>
+            <td>
+              <%= render chat_room %>
+            </td>
+            <td></td>
+            <td>Coming Soon...</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</body>

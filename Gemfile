@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'redis', '~> 3.2'
 

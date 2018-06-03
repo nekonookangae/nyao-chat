@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 @import "bootstrap";
 
@@ -22,3 +23,47 @@
     margin: 0.5rem;
   }
 }
+
+/* header */
+header {
+  position: relative;
+  width: 100%;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #FFAAFF;
+}
+header .headline{
+  font-size: 32px;
+}
+.social {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+}
+.social i {
+  display: inline-block;
+  margin-left: 20px;
+}
+.nav-list {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+.nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+/* header */
+
+/*footer*/
+footer {
+ text-align: center;
+ padding: 15px 0;
+ background-color: #FFAAFF;
+}
+.footer-text {
+ color: #fff;
+}
+/*footer*/
