@@ -5,14 +5,14 @@
   </p>
   <div class='col-xs-9'>
     <table class='table'>
-      <thead>
+      <thead class='table'>
         <tr>
           <th>Room title<th>
           <th>Subscription<th>
           <th colspan="3"></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class='table'>
         <% @chat_rooms.each do |chat_room| %>
           <tr>
             <td>
@@ -20,6 +20,8 @@
             </td>
             <td></td>
             <td>Coming Soon...</td>
+            <td></td>
+            <td></td>
           </tr>
         <% end %>
       </tbody>

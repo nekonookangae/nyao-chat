@@ -3,14 +3,14 @@
 <body>
   <div class='col-xs-9'>
     <table class='table'>
-      <thead>
+      <thead class='table'>
         <tr>
           <th>Room title<th>
           <th>Chat<th>
           <th colspan="3"></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class='table'>
         <div id="messages">
           <% @messages.each do |message| %>
             <tr>
@@ -21,6 +21,8 @@
               </td>
               <td></td>
               <td> <%= render message %> </td>
+              <td></td>
+              <td></td>
             </tr>
           <% end %>
         </div>

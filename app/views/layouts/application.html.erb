@@ -1,62 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Nyao-Chat</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <div class="bg-mask">
+    <div class="bg-image">
+      <head>
+        <title>Nyao-Chat</title>
+          <%= csrf_meta_tags %>
+          <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <header>
-      <h1 class="headline">
-        Nyao-Chat
-      </h1>
-    </header>
-    <nav>
-      <ul class="nav-list">
-        <% if user_signed_in? %>
-          <li class="nav-list-item">
-            <a class="fa fa-users", href="/users">User list
-            </a>
-          </li>
-          <li class="nav-list-item">
-            <a class="fa fa-comments", href="/messages">Chat list
-            </a>
-          </li>
-          <li class="nav-list-item">
-            <a class="fa fa-home", href="/chat_rooms">Room list
-            </a>
-          </li>
-          <li class="nav-list-item">
-            <a class="fa fa-user-times", href=<%= destroy_user_session_path %> data-method="delete">Sign out
-            </a>
-          </li>
-        <% else %>
-          <li class="nav-list-item">
-            <a class="fa fa-users", href="/users">User list
-            </a>
-          </li>
-          <li class="nav-list-item">
-            <a class="fa fa-comments" href="/messages">Chat list
-            </a>
-          </li>
-          <li class="nav-list-item">
-            <a class="fa fa-home", href="/chat_rooms">Room list
-            </a>
-          </li>
-          <li class="nav-list-item">
-            <a class="fa fa-user-check" href="/users/sign_in">Sign in
-            </a>
-          </li>
-        <% end %>
-        </ul>
-      </nav>
-    <%= yield %>
-    <footer>
-      <p class="footer-content"> Copylight hk-nyao. All rights recerved. </p>
-    </footer>
-  </body>
+          <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+          <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      </head>
+      <body>
+        <header>
+          <h1 class="headline">
+            Nyao-Chat
+          </h1>
+        </header>
+        <nav>
+          <ul class="nav-list">
+            <li class="nav-list-item">
+              <a class="fa fa-users", href="/users">User list
+              </a>
+            </li>
+            <li class="nav-list-item">
+              <a class="fa fa-comments", href="/messages">Chat list
+              </a>
+            </li>
+            <li class="nav-list-item">
+              <a class="fa fa-home", href="/chat_rooms">Room list
+              </a>
+            </li>
+            <% if user_signed_in? %>
+              <li class="nav-list-item">
+                <a class="fa fa-user-times", href=<%= destroy_user_session_path %> data-method="delete">Sign out
+                </a>
+              </li>
+            <% else %>
+              <li class="nav-list-item">
+                <a class="fa fa-user-check" href="/users/sign_in">Sign in
+                </a>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+        <%= yield %>
+        <footer>
+          <p class="footer-content"> Copylight hk-nyao. All rights recerved. </p>
+        </footer>
+      </body>
+    </div>
+  </div>
 </html>
