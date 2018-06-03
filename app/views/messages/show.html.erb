@@ -1,0 +1,33 @@
+<h1>Chat info</h1>
+<body>
+  <div class='col-xs-9'>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Room title</th>
+          <th>Chat</th>
+          <th>Action</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <div id="messages">
+          <tr>
+            <td>
+              <a href="/chat_rooms/<%= @message.chat_room_id %>">
+                <%= @chat_rooms.find(@message.chat_room_id).title %>
+              </a>
+            </td>
+            <td> <%= render @message %> </td>
+            <td>
+            <% if @message.user == current_user %>
+              <a data-confirm="削除しますか？" class="btn btn-danger" rel="nofollow" data-method="delete" href= <%= @chat_room_path %>>Destroy
+              </a>
+            <% end %>
+            </td>
+          </tr>
+        </div>
+      </tbody>
+      </table>
+    </div>
+</body>

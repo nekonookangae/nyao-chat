@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # ユーザーはN個のルームを作成でき、削除は作成者のみ行える
+  # ユーザーはN個のルームを作成できる
   has_many :chat_rooms, dependent: :destroy
-  # ユーザーはN個のメッセージを作成でき、削除は作成者のみ行える
+  # ユーザーはN個のメッセージを作成できる
   has_many :messages, dependent: :destroy
 
   # ユーザー名は2~20文字

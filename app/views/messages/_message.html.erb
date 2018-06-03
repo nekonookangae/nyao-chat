@@ -9,7 +9,7 @@
           <%= message.user.name %> at
           <%= message.timestamp %> says
         </span><br>
-        <%= message.body %>
+        <%= link_to "#{message.body}", message_path(message.id) %>
       </p>
     </div>
   </div>
