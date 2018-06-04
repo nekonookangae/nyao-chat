@@ -22,6 +22,16 @@ class ChatRoomsController < ApplicationController
     @message = Message.new
   end
 
+  def edit
+    @chat_room = ChatRoom.find(params[:id])
+  end
+
+  def update
+    @chat_room = ChatRoom.find(params[:id])
+    @chat_room.update(chat_room_params)
+    redirect_to chat_rooms_path
+  end
+
   def destroy
     @chat_room = ChatRoom.find(params[:id])
     @chat_room.destroy
@@ -31,6 +41,6 @@ class ChatRoomsController < ApplicationController
   private
 
   def chat_room_params
-    params.require(:chat_room).permit(:title)
+    params.require(:chat_room).permit(:title, :explanation)
   end
 end

@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   # ユーザー名は2~20文字
   validates :name, presence: true, length: { minimum: 2, maximum: 20 }
+  # 自己紹介文は最大100文字
+  validates :introduction, length: { maximum: 100 }
 
   #ユーザー名を利用してログインするようにオーバーライド
   def self.find_first_by_auth_conditions(warden_conditions)

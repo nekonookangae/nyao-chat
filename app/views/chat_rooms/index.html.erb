@@ -8,8 +8,8 @@
       <thead class='table'>
         <tr>
           <th>Room title<th>
-          <th>Subscription<th>
-          <th colspan="3"></th>
+          <th>Explanation<th>
+          <th>Action<th>
         </tr>
       </thead>
       <tbody class='table'>
@@ -19,7 +19,21 @@
               <%= render chat_room %>
             </td>
             <td></td>
-            <td>Coming Soon...</td>
+            <td><%= chat_room.explanation %></td>
+            <td></td>
+            <% if user_signed_in? %>
+              <% if chat_room.user_id == current_user.id %>
+                <td>
+                  <a class="btn btn-success" href= <%= edit_chat_room_path(chat_room.id) %>>Edit
+                  </a>
+                </td>
+                <td>
+                  <a data-confirm="削除しますか？" class="btn btn-danger" rel="nofollow" data-method="delete" href= <%= chat_rooms_path %>>Destroy
+                  </a>
+                </td>
+              <% else %>
+              <% end %>
+            <% end %>
             <td></td>
             <td></td>
           </tr>

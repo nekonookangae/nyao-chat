@@ -1,14 +1,12 @@
 <h1><%= @chat_room.title %></h1>
+<% @user = User.find(@chat_room.user_id) %>
+<h2> Created by <%= @user.name %> </h2>
 <!--
 ・ルームマスターを定義していない課題により保留
 <% if @message.user == current_user %>
 <% end %>
 -->
 <body>
-  <a data-confirm="削除しますか？" class="btn btn-danger" rel="nofollow" data-method="delete" href= <%= @chat_rooms_path %>>Destroy
-  </a>
-  <br>
-  <br>
   <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
     <%= render @chat_room.messages %>
   </div>
