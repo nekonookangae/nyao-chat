@@ -1,3 +1,4 @@
+<div class='container'>
 <h1>Room list</h1>
 <body>
   <p class="lead">
@@ -7,9 +8,10 @@
     <table class='table'>
       <thead class='table'>
         <tr>
-          <th>Room title<th>
-          <th>Explanation<th>
-          <th>Action<th>
+          <th>Room title</th>
+          <th>Explanation</th>
+          <th>Action</th>
+          <th></th>
         </tr>
       </thead>
       <tbody class='table'>
@@ -18,9 +20,7 @@
             <td>
               <%= render chat_room %>
             </td>
-            <td></td>
             <td><%= chat_room.explanation %></td>
-            <td></td>
             <% if user_signed_in? %>
               <% if chat_room.user_id == current_user.id %>
                 <td>
@@ -42,3 +42,4 @@
     </table>
   </div>
 </body>
+</div>
